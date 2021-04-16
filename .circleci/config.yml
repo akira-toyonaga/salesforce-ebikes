@@ -2,18 +2,21 @@ version: 2.1
  orbs:
    sfdx: circleci/salesforce-sfdx@2.1
  jobs:
-   install_authenticate:
+   create_open_delete:
      executor: sfdx/default
      steps:
        - checkout
        - sfdx/install
        - sfdx/auth:
-           defaultusername: user@email.com
-       - run:
-           name: open orgs
-           command: |
-             echo "sfdx force:org:open -u vscodeOrg"
+          defaultusername: user@email.com
+      - sfdx/scratch-create:
+          scratch-alias: circleci
+          scratch-config: ./config/project-scratch-def.json
+      - sfdx/scratch-open:
+          scratch-alias: circleci
+      - sfdx/scratch-delete:
+          scratch-alias: circleci
  workflows:
    basic-test:
      jobs:
-       - install_authenticate
+       - create_open_delete
