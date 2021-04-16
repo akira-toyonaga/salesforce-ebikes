@@ -8,6 +8,7 @@ export default class HeroDetails extends LightningElement {
     @api title = 'Hero Details'; // Default title to comply with accessibility
     @api slogan;
     @api recordName;
+    @api describe
 
     recordInfoData;
     hrefUrl;

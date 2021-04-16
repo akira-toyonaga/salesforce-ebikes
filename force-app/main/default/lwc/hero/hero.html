@@ -1,6 +1,6 @@
 <template>
     <img alt="" if:true={isImg} src={resUrl} />
-    <video if:true={isVideo} autoplay muted loop>
+    <video if:true={isVideo} autoplay muted loop controls>
         <source src={resUrl} type="video/mp4" />
     </video>
     <div if:true={isOverlay}></div>
@@ -8,6 +8,7 @@
         class={heroDetailsPositionClass}
         title={title}
         slogan={slogan}
+        describe={describe}
         record-name={buttonClickProductOrFamilyName}
     >
         <span slot="button">{buttonText}</span>

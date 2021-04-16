@@ -56,6 +56,13 @@
                 datasource="apex://HeroDetailsPositionCustomPicklist"
             />
             <property
+                name="describe"
+                type="String"
+                label="Describe"
+                description="新規作成プロパティのテスト"
+                default="こんにちは、世界。"
+            />
+            <property
                 name="overlay"
                 type="Boolean"
                 label="Overlay"

@@ -18,6 +18,7 @@ export default class Hero extends LightningElement {
     @api overlay;
     @api opacity;
     @api buttonClickProductOrFamilyName;
+    @api describe
 
     get resUrl() {
         if (this.isImg) {
