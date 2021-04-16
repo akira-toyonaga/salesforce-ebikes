@@ -1,7 +1,19 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
-workflows:
-  node-tests:
-    jobs:
-      - node/test
+ orbs:
+  sfdx: circleci/salesforce-sfdx@2.1
+ jobs:
+   install_authenticate:
+     executor: sfdx/default
+     steps:
+       - checkout
+       - sfdx/install
+       - sfdx/auth:
+           defaultusername: user@email.com
+       - run:
+           name: open orgs
+           command: |
+             echo "sfdx force:org:open -u vscodeOrg"
+ workflows:
+   basic-test:
+     jobs:
+       - install_authenticate
