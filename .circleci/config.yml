@@ -14,5 +14,9 @@ jobs:
       - sfdx/scratch-delete:
           scratch-alias: circleci
 orbs:
-  sfdx: circleci/salesforce-sfdx@x.y
+  sfdx: circleci/salesforce-sfdx@2.1
 version: 2.1
+workflows:
+  basic-test:
+    jobs:
+      - create-open-delete
