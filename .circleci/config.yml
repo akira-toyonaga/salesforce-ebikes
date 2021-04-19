@@ -8,7 +8,7 @@ version: 2.1
         - checkout
         - sfdx/install
         - sfdx/auth:
-            defaultusername: user@email.com
+            defaultusername: toyo_aki@si.com
         - sfdx/scratch-create:
             scratch-alias: circleci
             scratch-config: ./config/project-scratch-def.json
