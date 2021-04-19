@@ -4,10 +4,9 @@ jobs:
     steps:
       - checkout
       - sfdx/install
-      run:
-        command: >
-          echo "sfdx force：auth：logout --u toyo_aki@si.com"
-        name: コマンド実行
+      - run:
+          command: echo "sfdx force：auth：logout --u toyo_aki@si.com"
+          name: コマンド実行
       - sfdx/auth:
           defaultusername: toyo_aki@si.com
       - sfdx/scratch-create:
